@@ -105,8 +105,8 @@
                 <a id="arrow"> <img style="width: 18px; height: 25px; margin-right:0px;  color: white;" src="images/left-arrow.png" alt=""></a>
             </div>
             <div class="col-1 mt-2" style="margin-right: 15px;">
-                <img style=" width: 35px; height: 43px; margin-left: 0px;" src="images/Trans/DP.PNG" class="rounded-circle" alt="">
-                div id="myModal" class="modal">
+                <img id="myImg" style=" width: 35px; height: 43px; margin-left: 0px;" src="images/Trans/DP.PNG" class="rounded-circle" alt="">
+                <div id="myModal" class="modal">
                     <span class="close">&times;</span>
                     <img class="modal-content" id="img01">
                     <div id="caption"></div>
@@ -160,9 +160,8 @@
             Transbuttonelement.addEventListener("click", function () {
                window.location.href = 'index.html'
             });
-          var modal = document.getElementById("myModal");
-
-   var img = document.getElementById("myImg");
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("myImg");
    var modalImg = document.getElementById("img01");
    var captionText = document.getElementById("caption");
     img.onclick = function(){
