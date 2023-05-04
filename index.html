@@ -16,6 +16,90 @@
         background-color: #1e635b;
         position: fixed;        
         }
+     #myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#myImg:hover {opacity: 0.6;}
+
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 50%;
+  max-width: 400px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 50%;
+  max-width: 400px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(0.5)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(0.5)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 400px){
+  .modal-content {
+    width: 100%;
+  }
+}
        
     </Style>
 </head>
@@ -32,9 +116,9 @@
             <nav class="navbar navbar-expand-lg navbar-light  " style="flex: 0px;">
                 <div class="container-fluid ">
                 <a style=" padding-left: 0rem;" class="nav-link active"  href="#" id="vijay"><img style="width: 20px; height: 25px; " src="images/camera.png" alt=""></a>
-                  <a style="color: white; text-shadow: blanchedalmond;border-bottom-style:solid; width: fit-content; " class="nav-link active"  href="#" >CHATS</a>
+                  <a style="color: white; text-shadow: blanchedalmond;border-bottom-style:solid; width: fit-content; " class="nav-link active"  href="#" >GALLERY</a>
                   <a style="color: white; text-shadow: blanchedalmond; " class="nav-link active" href="#" id="status">STATUS</a>
-                  <a style="color: white;text-shadow: blanchedalmond; "  class="nav-link active"href="#" id="chart">CALLS</a>
+                  <a style="color: white;text-shadow: blanchedalmond; "  class="nav-link active"href="#" id="chart">TALKS</a>
                    </div>
              </nav>
           </nav>
@@ -43,7 +127,12 @@
         <div class="container">
             <div class="row mt-3">
                 <div class="col-2 mt-2">
-                    <img  style=" width: 40px; height: 40px; " src="images/NareshY/naresh.PNG" class="rounded-circle" alt="">
+                    <img id="myImg" style=" width: 40px; height: 40px; " src="images/NareshY/naresh.PNG" class="rounded-circle" alt="">
+                    <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                   </div>
                 </div>
                 <div class="col-6" style="margin-top:7px ; ">
                    <h6 style="margin-bottom: 0px;" id="naresh">Naresh Bava</h6>
@@ -54,7 +143,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style="width:40px;height:40px" src="images/sairam/saidp.PNG" class="rounded-circle" alt="">
+                        <img id="myImg" style="width:40px;height:40px" src="images/sairam/saidp.PNG" class="rounded-circle" alt="">
+                         <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                   </div>
                     </div>
                     <div class="col" style="margin-top: 7px;">
                         <h6 style="margin-bottom: 0px;" id="sairam">R.SaiRam</h6>
@@ -63,7 +157,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style="width:40px ; height: 40px;" src="images/Mnaresh/Mnaresh.PNG" class="rounded-circle" alt="">
+                      <img id ="myImg" style="width:40px ; height: 40px;" src="images/Mnaresh/Mnaresh.PNG" class="rounded-circle" alt="">
+                     <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="img01">
+                    <div id="caption"></div>
+                   </div>
                     </div>
                     <div class="col" style="margin-top: 7px;">
                         <h6 style="margin-bottom: 0px;" id="Mnaresh1">M Naresh</h6>
@@ -72,7 +171,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style="width:40px ; height: 40px;" src="images/sri ram 225/godpic.PNG" class="rounded-circle" alt="">
+                        <img id="myImg" style="width:40px ; height: 40px;" src="images/sri ram 225/godpic.PNG" class="rounded-circle" alt="">
+                       <div id="myModal" class="modal">
+                       <span class="close">&times;</span>
+                       <img class="modal-content" id="img01">
+                       <div id="caption"></div>
+                   </div>
                     </div>
                     <div class="col" style="margin-top: 7px;">
                         <h6 style="margin-bottom: 0px;" id="Sriram">Sri Ram.m(225)</h6>
@@ -81,7 +185,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style="width:40px ; height: 40px;" src="images/Sai Baba/Sai@baba.PNG" class="rounded-circle" alt="">
+                        <img id="myImg" style="width:40px ; height: 40px;" src="images/Sai Baba/Sai@baba.PNG" class="rounded-circle" alt="">
+                         <div id="myModal" class="modal">
+                       <span class="close">&times;</span>
+                       <img class="modal-content" id="img01">
+                       <div id="caption"></div>
+                   </div>
                     </div>
                     <div class="col" style="margin-top: 7px;">
                         <h6 style="margin-bottom: 0px;" id="Baba">Saibaba@BVC@L1</h6>
@@ -90,7 +199,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style="width:40px ; height: 40px;" src="images/ShivaAku/akuu.png" class="rounded-circle" alt="">
+                        <img id="myImg" style="width:40px ; height: 40px;" src="images/ShivaAku/akuu.png" class="rounded-circle" alt="">
+                         <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                       <img class="modal-content" id="img01">
+                       <div id="caption"></div>
+                   </div>
                     </div>
                     <div class="col" style="margin-top: 7px;">
                         <h6 style="margin-bottom: 0px;" id="Akuu">Shiva(EEE Aku)</h6>
@@ -99,7 +213,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style="width:40px ; height: 40px;" src="images/Trans/DP.PNG" class="rounded-circle" alt="">
+                        <img id="myImg" style="width:40px ; height: 40px;" src="images/Trans/DP.PNG" class="rounded-circle" alt="">
+                         <div id="myModal" class="modal">
+                         <span class="close">&times;</span>
+                         <img class="modal-content" id="img01">
+                         <div id="caption"></div>
+                     </div>
                     </div>
                     <div class="col" style="margin-top: 7px;">
                         <h6 style="margin-bottom: 0px;" id="ganesh">Ganesh.f</h6>
@@ -108,7 +227,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style="width:40px ; height: 40px;" src="images/Sarrainodu/Dp.PNG" class="rounded-circle" alt="">
+                        <img id="myImg" style="width:40px ; height: 40px;" src="images/Sarrainodu/Dp.PNG" class="rounded-circle" alt="">
+                         <div id="myModal" class="modal">
+                         <span class="close">&times;</span>
+                         <img class="modal-content" id="img01">
+                         <div id="caption"></div>
+                      </div>
                     </div>
                     <div class="col" style="margin-top: 7px;">
                         <h6 style="margin-bottom: 0px;" id="Sarrainodu">Sarrainodu</h6>
@@ -117,7 +241,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style="width:40px ; height: 40px;" src="images/pramod/Dp.jpg" class="rounded-circle" alt="">
+                        <img id="myImg" style="width:40px ; height: 40px;" src="images/pramod/Dp.jpg" class="rounded-circle" alt="">
+                         <div id="myModal" class="modal">
+                         <span class="close">&times;</span>
+                         <img class="modal-content" id="img01">
+                         <div id="caption"></div>
+                     </div>
                     </div>
                     <div class="col" style="margin-top: 7px;">
                         <h6 style="margin-bottom: 0px;" id="pramod">Sai Durga.pp</h6>
@@ -126,7 +255,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style="width:40px ; height: 40px;" src="images/JPanna/jpdp.jpg" class="rounded-circle" alt="">
+                        <img id="myImg" style="width:40px ; height: 40px;" src="images/JPanna/jpdp.jpg" class="rounded-circle" alt="">
+                         <div id="myModal" class="modal">
+                         <span class="close">&times;</span>
+                         <img class="modal-content" id="img01">
+                         <div id="caption"></div>
+                     </div>
                     </div>
                     <div class="col" style="margin-top: 7px;">
                         <h6 style="margin-bottom: 0px;" id="jp">J P(Frnd)</h6>
@@ -135,7 +269,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style="width:40px ; height: 40px;" src="images/BVTRMani/DP.PNG" class="rounded-circle" alt="">
+                        <img id="myImg" style="width:40px ; height: 40px;" src="images/BVTRMani/DP.PNG" class="rounded-circle" alt="">
+                         <div id="myModal" class="modal">
+                         <span class="close">&times;</span>
+                         <img class="modal-content" id="img01">
+                         <div id="caption"></div>
+                     </div>
                     </div>
                     <div class="col" style="margin-top: 7px;">
                         <h6 style="margin-bottom: 0px;" id="Mani">Manikanta Friend(bvtr)</h6>
@@ -144,7 +283,12 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-2 mt-2">
-                        <img style=" width: 40px; height: 40px; " src="images/Friends/dpf4.jpg" class="rounded-circle" alt="">
+                        <img id="myImg" style=" width: 40px; height: 40px; " src="images/Friends/dpf4.jpg" class="rounded-circle" alt="">
+                         <div id="myModal" class="modal">
+                         <span class="close">&times;</span>
+                         <img class="modal-content" id="img01">
+                         <div id="caption"></div>
+                     </div>
                     </div>
                     <div class="col-6" style="margin-top:7px ; ">
                        <h6 style="margin-bottom: 0px;" id="Frnd">FriendsBatch</h6>
@@ -222,6 +366,19 @@
          dotbuttonelement.addEventListener("click", function () {
             alert("This is out of service")
          });
+     var modal = document.getElementById("myModal");
+   var img = document.getElementById("myImg");
+   var modalImg = document.getElementById("img01");
+   var captionText = document.getElementById("caption");
+    img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function() { 
+  modal.style.display = "none";
+  }
          
     </script>
     
