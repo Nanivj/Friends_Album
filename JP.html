@@ -11,6 +11,10 @@
             background-color:whitesmoke ;
             width: auto;
         }
+          .fixed-header{
+        background-color: #1e635b;
+        position: fixed;        
+        }
           #myImg {
   border-radius: 5px;
   cursor: pointer;
@@ -100,6 +104,7 @@
 <body>
     <div class="container" style="width: auto;">
         <div class="row mt-2" style="background-color: #1e635b; width: auto; height: 60px;">
+              <nav  class="navbar navbar-light, fixed-header">
             <div class="col-1" style="margin-top: 13px;">
                 <a id="arrow"> <img style="width: 18px; height: 25px; margin-right:0px;  color: white;" src="images/left-arrow.png" alt=""></a>
             </div>
@@ -125,13 +130,13 @@
             <div class="col-1" style="margin-top: 10px;">
                 <a  type="submit"><img style="width: 27px; height:39px ; margin-right: 0px;" src="images/three-dots.png" alt=""></a>
             </div>
+            </nav>
          </div>
    </div>
-    <main>
-        <div class="container">
+   
+        <div class="container mt-3">
             <div class="row">
                 <div class="col mt-2">
-                   
                         <img src="images/JPanna/jp1.jpg"  alt="..."  width="120">
                  </div>
             </div>
@@ -152,8 +157,6 @@
                 </div>
             </div>
         </div>
-     </main>
-    
     <script>
         var jpbuttonelement = document.getElementById('arrow');
             jpbuttonelement.addEventListener("click", function () {
